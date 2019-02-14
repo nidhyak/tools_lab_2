@@ -10,7 +10,7 @@ IF S:FS THEN
     Counter := 0;                       // state tracking
 END_IF;
 
-CASE Counter OF:
+CASE Counter OF
     0:                                  // wait for button press
         DO_05 := 0;                     // light off
         IF DI_06 THEN                   // button pressed
