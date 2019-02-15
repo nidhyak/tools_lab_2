@@ -1,0 +1,28 @@
+/* Exercise 04
+
+Push DI_06, and DO_05 will remain lighted up for three seconds and will go off.
+
+*/
+
+IF S:FS THEN
+    DO_05 := 0;
+    Counter := 0;                       // state tracking
+END_IF;
+
+CASE Counter OF
+    0:                                  // wait for button press
+        DO_05 := 0;                     // light off
+        IF DI_06 THEN                   // button pressed
+            Counter := 1;
+        END_IF;
+    1:
+        DO_05 := 1;                     // light on
+        TON.PRE := 3000;                // milliseconds
+        TON.TimerEnable := 1;           // start timer
+        TONR(TON);
+        IF TON.DN THEN                  // timer done
+            TON.TimerEnable := 0;       // stop timer
+            TONR(TON);
+            Counter := 0;               // reset state
+        END_IF;
+END_CASE;

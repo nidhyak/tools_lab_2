@@ -1,0 +1,32 @@
+(*SECOND PULSE*)
+TON.PRE :=1000; (* Milli second. *)
+TON.TimerEnable :=1; (* Timer enable*)
+TONR(TON ); (* Timer On delay. *)
+R_TRIG.InputBit :=TON.DN ; (* One shot trigger. *)
+OSRI( R_TRIG);
+_SEC_P := R_TRIG.OutputBit;
+TON.Reset := _SEC_P;
+
+(*MINUTES PULSE*)
+TON_MIN.PRE :=60000;
+TON_MIN.TimerEnable :=1;
+TONR(TON_MIN );
+R_TRIG_MIN.InputBit :=TON_MIN.DN ;
+OSRI( R_TRIG_MIN);
+_MIN_P := R_TRIG_MIN.OutputBit;
+TON_MIN.Reset := _MIN_P;
+
+(*
+IF _SEC_P THEN
+TEST_SEC:=TEST_SEC+1;
+END_IF;
+IF _MIN_P THEN
+TEST_MIN:=TEST_MIN+1;
+END_IF;
+*)
+
+
+IF S:FS THEN (* this is the first, normal scan of the routines in the current program. *)
+STATE := 1;
+Switch := 1;
+END_IF;

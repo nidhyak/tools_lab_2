@@ -1,0 +1,13 @@
+/* Exercise 05
+
+If the temperature sensor reads above 30 degrees, DO_02 and DO_10 buttons will
+light up.
+
+*/
+
+IF S:FS THEN
+    ThresTemp := 30.0;
+END_IF;
+
+DO_02 := Temp1 > ThresTemp;
+DO_10 := Temp1 > ThresTemp;

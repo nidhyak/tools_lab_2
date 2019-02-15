@@ -1,0 +1,29 @@
+/* Exercise 02
+
+If DI_02 is pressed, followed by DI_03 is pressed, the button DO_02 and DO_05
+will light up if it is not originally lit up and turn off if it is lit up.
+
+*/
+
+IF S:FS THEN
+    DO_02 := 0;
+    DO_05 := 0;
+    Counter := 0;
+END_IF;
+
+CASE Counter OF
+    0:                                  // No buttons pressed
+        IF DI_02 AND NOT DI_03 THEN     // Only first button pressed
+            Counter := 1;
+        END_IF;
+    1:
+        IF DI_02 AND DI_03 THEN         // Both buttons pressed
+            DO_02 := NOT DO_02;         // Toggle lights
+            DO_05 := NOT DO_05;
+            Counter := 0;               // Reset counter
+        ELSIF DI_02 THEN                // First button held
+            Counter := 1;
+        ELSE                            // No buttons pressed
+            Counter := 0;
+        END_IF;
+END_CASE;
