@@ -21,3 +21,6 @@ env/
 ### Temporary Files ###
 .~lock*
 *.tmp
+
+### Local Data ###
+local_data/
