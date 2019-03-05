@@ -38,11 +38,13 @@ Incident Description
 
 Threat Analysis
 ~~~~~~~~~~~~~~~
-Examining the event logs indicated that user was attemping to perform SQL injection to query for unauthorised information from Feb 26, 2019, 6:48:14 PM to 6:49:12 PM, with the source IP "172.16.11.37" which indicated that the offense was conducted within the network of the TP. This traffic was intercepted by Bluecoat Server which had dropped the potentially malicious SQL request issued from this user. Current investigation indicated that the IP was used in the school IBM-QRADAR lab. Typically commands such as HTTP_GET_SQL_Unionselect does not necessarily indicate an attack, however it is followed by SQL injection in the context of the login page, hence the severity of the offense is 9.
+Examining the event logs indicated that a user was attempting to perform SQL injection to query for unauthorised information from Feb 26, 2019, 6:48:14 PM to 6:49:12 PM, with the source IP "172.16.11.37" which indicated that the offense was conducted within the network of the Temasek Polytechnic (TP). This traffic was intercepted by Bluecoat Server which had dropped the potentially malicious SQL request issued from this user. 
+
+Typically commands such as HTTP_GET_SQL_Unionselect does not necessarily indicate an attack, however it was followed by SQL injection at the login page, hence the severity of the offense was given a rating of 9.
 
 Recommendation
 ~~~~~~~~~~~~~~
-This incident is escalated to TP IBM Qradar lab to identify the actual user ID by the lab server logs or checking the sign-in entries for further actions. Given that the severity of the issue is HIGH (9), it is recommended that the raw traffic packets containing exact SQL commands issued by user are to be fetched from IBM X-force database to be passed to the Tier 2 - Triage team for further analysis.
+Current investigation indicates that the source IP is located in TP IBM-QRADAR lab.  This incident is escalated to TP IBM QRadar lab to identify the actual user ID by the lab server logs and to cross check with the lab’s physical sign-in entries. Given that the severity of the issue is HIGH (9), it is recommended that the raw traffic packets containing exact SQL commands issued by this user are to be fetched from IBM X-force database to be passed to the Tier2 - Triage team for further analysis.
 
 .. raw:: pdf
 
@@ -85,7 +87,7 @@ Incident Description
 
 Threat Analysis
 ~~~~~~~~~~~~~~~
-A cross-site scripting incident was detected at Feb 26, 2019, 3:30:56 PM, originating from the source IP of “172.16.11.4”. The destination IP of the event was “172.16.11.37”, indicating that both the attacker and victim are located within the network for TP_IBM_SOC. The offence was logged by SiteProtectorSP3001 in the SOC_Servers. The destination IP is also involved in other offenses which may indicate that the attacker may be carrying out a combination of attacks on the network. Additional investigation is required to elucidate the identity of the user involved in triggering the transfer of data to the destination IP. 
+A cross-site scripting incident was detected at Feb 26, 2019, 3:30:56 PM, originating from the source IP of “172.16.11.4”. The destination IP of the event was “172.16.11.37”, indicating that both the attacker and victim were located within the network for TP_IBM_SOC. The offence was logged by SiteProtectorSP3001 in the SOC_Servers. The destination IP was also involved in other offenses which may indicate that the attacker may be carrying out a combination of attacks on the network. Additional investigation is required to confirm the identity of the user involved and to check the data flows between the source and destination IPs.
 
 Recommendation
 ~~~~~~~~~~~~~~
@@ -109,6 +111,9 @@ Supporting Data
 
 Security Intelligence Report
 ============================
+
+CVE-2019-1987
+-------------
 :**Topic**:
    **Descriptions/Actions**
 
@@ -133,7 +138,7 @@ Security Intelligence Report
    Devices running Android OS worldwide
 
 :Threat Type:
-   The vulnerability could allow an attacker to send a specially crafted PNG (Portable Network Graphic file) file via messaging apps, email or webpage. If the user opens this file for viewing, remote arbitrary code execution in privileged process can be achieved, resulting in device hijack and compromise.
+   The vulnerability could allow an attacker to send a specially crafted PNG file via messaging apps, email or webpage. If the user opens this file for viewing, remote arbitrary code execution in privileged process can be achieved, resulting in device hijack and compromise.
 
 :Threat CVE Links:
    - https://nvd.nist.gov/vuln/detail/CVE-2019-1987
@@ -141,13 +146,59 @@ Security Intelligence Report
    - https://source.android.com/security/bulletin/2019-02-01
 
 :Threat State:
-   Certain
+   Unknown (No exploits have been spotted in the wild.)
 
 :Threat Impact:
    High
 
 :Recommendations:
-   Android devices be updated with the latest security patch levels 2019-02-01 & 2019-02-05 ASAP, to fix the issues contained in this advisory. As Android is a multiple platform open source OS, an available update for your device may depend on a release from your specific manufacturer.
+   All Android devices should be updated with the latest security patch levels 2019-02-01 & 2019-02-05 ASAP, to fix the issues contained in this advisory. As Android is a multiple platform open source OS, an available update for your device may depend on a release from your specific manufacturer.
+
+.. raw:: pdf
+
+   PageBreak
+
+CVE-2019-1663
+-------------
+:**Topic**:
+   **Descriptions/Actions**
+
+:Advisory Title:
+   CVE-2019-1663
+
+:Threat Name:
+   Cisco RV110W, RV130W, and RV215W Routers Management Interface Remote Command Execution Vulnerability
+
+:Overview:
+   A vulnerability in the web-based management interface of the Cisco RV110W Wireless-N VPN Firewall, Cisco RV130W Wireless-N Multifunction VPN Router, and Cisco RV215W Wireless-N VPN Router could allow an unauthenticated, remote attacker to execute arbitrary code on an affected device.
+
+:Affected Versions:
+   - RV110W Wireless-N VPN Firewall versions prior: 1.2.2.1
+   - RV130W Wireless-N Multifunction VPN Router version prior: 1.0.3.45
+   - RV215W Wireless-N VPN Router versions prior: 1.3.1.1
+
+:Affected Assets (Locations):
+   Customers using RV110W, RV130W and RV215W worldwide
+
+:Threat Type:
+   An attacker could exploit this vulnerability by sending malicious HTTP requests to a targeted device. A successful exploit could allow the attacker to execute arbitrary code on the underlying operating system of the affected device as a high-privilege user. 
+
+:Threat CVE Links:
+   - https://nvd.nist.gov/vuln/detail/CVE-2019-1663 
+   - https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1663
+   - https://tools.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-20190227-rmi-cmd-ex 
+
+:Threat State:
+   Certain (Detected port scanning activities by hackers for affected devices as of 1st March 2019)
+
+:Threat Impact:
+   Very High
+
+:Recommendations:
+   Cisco has released free software updates that address the vulnerability described in this advisory. Customers are advised to download and apply the following updates as soon as possible from the Software Center on Cisco.com (https://software.cisco.com/download/home):
+   - RV110W Wireless-N VPN Firewall 1.2.2.1
+   - RV130W Wireless-N Multifunction VPN Router 1.0.3.45
+   - RV215W Wireless-N VPN Router 1.3.1.1
 
 .. raw:: pdf
 
@@ -165,7 +216,7 @@ QRadar Advisor with Watson extends IBM QRadar Security Intelligence Platform dep
 
 Threat Response
 ~~~~~~~~~~~~~~~
-Begin with common sense, insights, and the ability to generalize that comes from human expertise. Add the ability of security analytics to correlate data, identify behavioral patterns and anomalies, and prioritize and manage workflows. Using QRadar Advisor with Watson and IBM Watson for Cyber Security, users can extend their capabilities further with cognitive security’s power to analyze unstructured as well as structured data, to understand natural language, and to respond. Users can finally gain the ability to draw upon the huge amount of security information when they previously could not tap the vast majority of security knowledge that is unstructured.
+Begin with common sense, insights, and the ability to generalize that comes from human expertise. Add the ability of security analytics to correlate data, identify behavioral patterns and anomalies, and prioritize and manage workflows. Using QRadar Advisor with Watson and IBM Watson for Cyber Security, users can extend their capabilities further with cognitive security’s power to analyze unstructured as well as structured data, to understand natural language, and to respond. Users can gain the ability to draw upon the huge amount of security information when they previously could not tap the vast majority of security knowledge that is unstructured.
 
 Understanding Threat Behaviour
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -173,7 +224,7 @@ QRadar detects threats. QRadar Advisor with Watson provides cognitive abilities 
 
 Intelligence
 ~~~~~~~~~~~~
-Some potential threats are easy to resolve. A weekend attempt to access the database may simply be an employee working from home. QRadar can detect unusual behavior, then an analyst can decide whether it’s dangerous. For sophisticated attacks, the cognitive techniques of QRadar Advisor with Watson can help to ingest and correlate vast amounts of structured and unstructured security data available to uncover new threat patterns, triage threats and make recommendations. QRadar Advisor with Watson provides a solution that not only ingests data, but also reasons and derives its own knowledge from it, discovering linkages that may otherwise go unnoticed and presenting information most relevant to the investigation.
+Some potential threats are easy to resolve. A weekend attempt to access the database may simply be an employee working from home. QRadar can detect unusual behavior, then an analyst can decide whether it’s dangerous. For sophisticated attacks, the cognitive techniques of QRadar Advisor with Watson can help to ingest and correlate vast amounts of structured and unstructured security data available to uncover new threat patterns, triage threats, and make recommendations. QRadar Advisor with Watson provides a solution that not only ingests data, but also reasons and derives its own knowledge from it, discovering linkages that may otherwise go unnoticed and presenting information most relevant to the investigation.
 
 Accuracy
 ~~~~~~~~
