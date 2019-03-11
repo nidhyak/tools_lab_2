@@ -196,6 +196,7 @@ CVE-2019-1663
 
 :Recommendations:
    Cisco has released free software updates that address the vulnerability described in this advisory. Customers are advised to download and apply the following updates as soon as possible from the Software Center on Cisco.com (https://software.cisco.com/download/home):
+
    - RV110W Wireless-N VPN Firewall 1.2.2.1
    - RV130W Wireless-N Multifunction VPN Router 1.0.3.45
    - RV215W Wireless-N VPN Router 1.3.1.1
