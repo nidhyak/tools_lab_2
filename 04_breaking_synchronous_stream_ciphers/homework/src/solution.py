@@ -2,12 +2,13 @@
 
 ### Filenames
 KEYSTREAM = 'keystream'
-HINT_GIF_ENC = 'hint.gif.enc'
 HINT_GIF = 'hint.gif'
-RULE_86_ENC = 'rule86.txt.enc'
+HINT_GIF_ENC = 'hint.gif.enc'
 RULE_86 = 'rule86.txt'
+RULE_86_ENC = 'rule86.txt.enc'
+SUPER_CIPHER = 'super_cipher.py'
 SUPER_CIPHER_ENC = 'super_cipher.py.enc'
-SUPER_CIPER = 'super_cipher.py'
+SUPER_CIPHER_PART = 'super_cipher.py.part'
 
 ### Extracted from super_cipher.py.enc
 RULE = [86 >> i & 1 for i in range(8)]
@@ -253,48 +254,47 @@ def decrypt(e_file, o_file, k_file=KEYSTREAM):
     with open(o_file, 'wb') as output_file:
         output_file.write(output)
 
-def get_keystream(e_file=RULE_86_ENC, d_file=RULE_86, o_file=KEYSTREAM):
-    """Bitwise XOR the encrypted file to the decrypted file to obtain
-    keystream.
+def get_xor_file(file_0, file_1, out_file):
+    """Bitwise XOR two files and saves the obtained values into an output file.
 
     Parameters
     ----------
-    e_file : string, optional
-        Filename for encrypted file
-        Defaults to RULE_86_ENC
-    d_file : string, optional
-        Filename for decrypted file
-        Defaults to RULE_86
-    o_file : string, optional
-        Filename for output file containing keystream
-        Defaults to KEYSTREAM
+    file_0 : string
+        Filename for first file
+    file_1 : string
+        Filename for second file
+    out_file : string
+        Filename for output file containing XOR values
 
     Returns
     -------
     None
-        Keystream file will be generated
+        Output file will be generated
 
     """
-    with open(e_file, "rb") as enc_file:
-        encrypted_file = bytearray(enc_file.read())
-    with open(d_file, "rb") as dec_file:
-        decrypted_file = bytearray(dec_file.read())
-    output = xor(encrypted_file, decrypted_file)
-    with open(o_file, 'wb') as output_file:
+    with open(file_0, "rb") as input_0:
+        bytearray_0 = bytearray(input_0.read())
+    with open(file_1, "rb") as input_1:
+        bytearray_1 = bytearray(input_1.read())
+    output = xor(bytearray_0, bytearray_1)
+    with open(out_file, 'wb') as output_file:
         output_file.write(output)
 
 def main():
-    print("Obtaining keystream...")
-    get_keystream()
-    print(f"Keystream saved as '{KEYSTREAM}'")
-    print(f"Decrypting {SUPER_CIPHER_ENC}...")
-    decrypt(SUPER_CIPHER_ENC, SUPER_CIPER)
-    print(f"'{SUPER_CIPHER_ENC}' saved as '{SUPER_CIPER}'")
-    print(f"Decrypting {HINT_GIF_ENC}...")
+    print(f"Obtaining keystream from '{RULE_86}' ^ '{RULE_86_ENC}'...")
+    get_xor_file(RULE_86, RULE_86_ENC, KEYSTREAM)
+    print(f"  Keystream saved as '{KEYSTREAM}'")
+    print(f"Partially decrypting '{SUPER_CIPHER_ENC}'...")
+    get_xor_file(SUPER_CIPHER_ENC, KEYSTREAM, SUPER_CIPHER_PART)
+    print(f"  '{SUPER_CIPHER_ENC}' saved as '{SUPER_CIPHER_PART}'")
+    print(f"Fully decrypting '{SUPER_CIPHER_ENC}'...")
+    decrypt(SUPER_CIPHER_ENC, SUPER_CIPHER)
+    print(f"  '{SUPER_CIPHER_ENC}' saved as '{SUPER_CIPHER}'")
+    print(f"Fully decrypting {HINT_GIF_ENC}...")
     decrypt(HINT_GIF_ENC, HINT_GIF)
-    print(f"'{HINT_GIF_ENC}' saved as '{HINT_GIF}'")
+    print(f"  '{HINT_GIF_ENC}' saved as '{HINT_GIF}'")
     print("Recovering seed value...")
-    print(f"Seed value: {get_seed()}")
+    print(f"  Seed value: {get_seed()}")
 
 if __name__ == '__main__':
     main()
