@@ -59,7 +59,7 @@ contract MultiSigWallet {
         if(
             ownerCount > MAX_OWNER_COUNT
             || _requiredSigs == 0
-            || _requiredSigs > MAX_OWNER_COUNT
+            || _requiredSigs > ownerCount
             || ownerCount == 0
           ){
             revert("Validation of n-of-m multisig setting failed");
