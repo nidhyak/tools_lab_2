@@ -76,7 +76,7 @@ Since the output of ``contract.submitTransaction`` was stored in ``var receipt``
 
 This resulted in the output detailed within `receipt.log <https://github.com/ooknosi/tools_lab_2/tree/master/06_blockchain_and_smart_contracts_using_ethereum/homework/src/receipt.log>`_.
 
-The extracted log contains details on the `Submission` event, as well as the `Confirmation` event.
+The extracted log contains details on the ``Submission`` event, as well as the ``Confirmation`` event.
 
 The fields on the full receipt log as follows:
 

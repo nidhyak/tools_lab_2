@@ -291,7 +291,7 @@ endobj
 endobj
 47 0 obj
 <<
-/Author () /CreationDate (D:20190323210301-08'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20190323210301-08'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+/Author () /CreationDate (D:20190323212705-08'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20190323212705-08'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
   /Subject (\(unspecified\)) /Title (Blockchain and Smart Contracts Using Ethereum) /Trapped /False
 >>
 endobj
@@ -921,7 +921,7 @@ Q
 q
 1 0 0 1 62.69291 106.2789 cm
 q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (The extracted log contains details on the ) Tj /F4 10 Tf 0 0 0 rg (Submission) Tj /F1 10 Tf 0 0 0 rg ( event, as well as the ) Tj /F4 10 Tf 0 0 0 rg (Confirmation) Tj /F1 10 Tf 0 0 0 rg ( event.) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (The extracted log contains details on the ) Tj /F3 10 Tf 0 0 0 rg (Submission) Tj /F1 10 Tf 0 0 0 rg ( event, as well as the ) Tj /F3 10 Tf 0 0 0 rg (Confirmation) Tj /F1 10 Tf 0 0 0 rg ( event.) Tj T* ET
 Q
 Q
 q
@@ -1704,7 +1704,7 @@ xref
 trailer
 <<
 /ID 
-[<3921db067bb5ddb0d8030b41f7c40ad4><3921db067bb5ddb0d8030b41f7c40ad4>]
+[<30475bfc00eff35974cfda5ee375579c><30475bfc00eff35974cfda5ee375579c>]
 % ReportLab generated PDF document -- digest (http://www.reportlab.com)
 
 /Info 47 0 R
