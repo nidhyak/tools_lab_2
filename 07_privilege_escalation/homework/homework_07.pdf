@@ -611,7 +611,7 @@ endobj
 endobj
 87 0 obj
 <<
-/Author () /CreationDate (D:20190403234230-08'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20190403234230-08'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
+/Author () /CreationDate (D:20190403235305-08'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20190403235305-08'00') /Producer (ReportLab PDF Library - www.reportlab.com) 
   /Subject (\(unspecified\)) /Title (Privilege Escalation) /Trapped /False
 >>
 endobj
@@ -1724,7 +1724,7 @@ endstream
 endobj
 115 0 obj
 <<
-/Length 3060
+/Length 3091
 >>
 stream
 1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
@@ -1794,34 +1794,34 @@ q
 1 0 0 1 62.69291 573.8236 cm
 q
 0 0 0 rg
-BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (The attacker will then connect to the open port to initiate transfer.) Tj T* ET
+BT 1 0 0 1 0 2 Tm /F1 10 Tf 12 TL (The attacker will then connect to the open port to initiate transfer:) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 567.8236 cm
+1 0 0 1 62.69291 540.6236 cm
+q
+q
+1 0 0 1 0 0 cm
+q
+1 0 0 1 6.6 6.6 cm
+q
+.662745 .662745 .662745 RG
+.5 w
+.960784 .960784 .862745 rg
+n -6 -6 468.6898 24 re B*
 Q
 q
-1 0 0 1 62.69291 555.8236 cm
-0 0 0 rg
-BT /F1 10 Tf 12 TL ET
-BT 1 0 0 1 0 2 Tm  T* ET
-q
-1 0 0 1 20 0 cm
-q
-BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (nc <) Tj (target ip) Tj (> <) Tj (target port) Tj (> < <) Tj (file input) Tj (>) Tj T* ET
+BT 1 0 0 1 0 2 Tm 12 TL /F4 10 Tf 0 0 0 rg (nc ) Tj (<) Tj (target ip) Tj (>) Tj ( ) Tj (<) Tj (target port) Tj (>) Tj ( ) Tj (<) Tj ( ) Tj (<) Tj (file input) Tj (>) Tj T* ET
+Q
+Q
+Q
 Q
 Q
 q
-Q
-Q
-q
-1 0 0 1 62.69291 555.8236 cm
+1 0 0 1 62.69291 526.6236 cm
 Q
 q
-1 0 0 1 62.69291 549.8236 cm
-Q
-q
-1 0 0 1 62.69291 243.2959 cm
+1 0 0 1 62.69291 220.0959 cm
 0 0 0 rg
 BT /F1 10 Tf 12 TL ET
 q
@@ -1842,16 +1842,16 @@ q
 Q
 Q
 q
-1 0 0 1 62.69291 243.2959 cm
+1 0 0 1 62.69291 220.0959 cm
 Q
 q
-1 0 0 1 62.69291 225.2959 cm
+1 0 0 1 62.69291 202.0959 cm
 q
 BT 1 0 0 1 0 2 Tm 12 TL /F1 10 Tf 0 0 0 rg (Once the file is transferred, it is compiled using ) Tj /F4 10 Tf 0 0 0 rg (gcc) Tj /F1 10 Tf 0 0 0 rg ( and executed, resulting in privilege escalation to root.) Tj T* ET
 Q
 Q
 q
-1 0 0 1 62.69291 219.2959 cm
+1 0 0 1 62.69291 196.0959 cm
 Q
  
 endstream
@@ -2233,26 +2233,26 @@ xref
 0002342461 00000 n 
 0002344644 00000 n 
 0002346024 00000 n 
-0002349137 00000 n 
-0002350307 00000 n 
-0002352648 00000 n 
-0002352820 00000 n 
-0002352855 00000 n 
-0002352890 00000 n 
-0002352925 00000 n 
-0002352960 00000 n 
-0002352995 00000 n 
-0002353030 00000 n 
-0002353065 00000 n 
-0002353100 00000 n 
-0002353135 00000 n 
-0002353171 00000 n 
-0002353207 00000 n 
-0002353243 00000 n 
+0002349168 00000 n 
+0002350338 00000 n 
+0002352679 00000 n 
+0002352851 00000 n 
+0002352886 00000 n 
+0002352921 00000 n 
+0002352956 00000 n 
+0002352991 00000 n 
+0002353026 00000 n 
+0002353061 00000 n 
+0002353096 00000 n 
+0002353131 00000 n 
+0002353166 00000 n 
+0002353202 00000 n 
+0002353238 00000 n 
+0002353274 00000 n 
 trailer
 <<
 /ID 
-[<1ef224ed5ed03c825cf33a8d3166a205><1ef224ed5ed03c825cf33a8d3166a205>]
+[<4c17c8a2e0b5674bc40c06b06b0481d7><4c17c8a2e0b5674bc40c06b06b0481d7>]
 % ReportLab generated PDF document -- digest (http://www.reportlab.com)
 
 /Info 87 0 R
@@ -2260,5 +2260,5 @@ trailer
 /Size 132
 >>
 startxref
-2353279
+2353310
 %%EOF

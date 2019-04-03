@@ -200,7 +200,7 @@ Another port is opened and set to listen on the target server, redirecting any i
 
 The ``/tmp`` directory is chosen as it has global read-write-execute access permissions for executing the exploit.
 
-The attacker will then connect to the open port to initiate transfer.
+The attacker will then connect to the open port to initiate transfer::
 
    nc <target ip> <target port> < <file input>
 
