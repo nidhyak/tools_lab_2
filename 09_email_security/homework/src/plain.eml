@@ -1,0 +1,28 @@
+From user1@sender.com  Sun Apr 21 08:58:43 2019
+Return-Path: <user1@sender.com>
+X-Original-To: user2@receiver.com
+Delivered-To: user2@receiver.com
+Received-SPF: None (mailfrom) identity=mailfrom; client-ip=10.0.2.7; helo=sender.home; envelope-from=user1@sender.com; receiver=<UNKNOWN> 
+Received: from sender.Home (unknown [10.0.2.7])
+	by receiver.Home (Postfix) with ESMTP id 632318218E
+	for <user2@receiver.com>; Sun, 21 Apr 2019 08:58:43 +0000 (UTC)
+Received: by sender.Home (Postfix, from userid 1000)
+	id 3356282142; Sun, 21 Apr 2019 08:58:43 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=sender.com;
+	s=default; t=1555837123;
+	bh=ShddNa5Iek34WryBN2twtMkLxv7o90PNk4Uuh5yurPE=;
+	h=Subject:From:To:Date:From;
+	b=al3lCTSajMO3I3n2rxfM3yKDc38gVo5xbJyVo4B0lIYrFeftpCPjKrudchgig+SK1
+	 15JE6pKHDic8B6bEipWFiCSAMFhB/0NwtA6LZWYYYZOIe7bNjnTn50qS+56/7vWcWL
+	 I4MQKJD62aYubXaGCLxFge5oqb9XQkUZ+zo5xTM2MkGXHcXI+CV5Gg9l7EFOhG51cG
+	 mNpCDShNfSOLsLiq9lR+rY8vGV6o/xk4IMK9At1apwhdBJMpwWrYpOsc/hleTswxiu
+	 VoPXycj5fSs4GnDPhJc+QabumdxqNlE9xcwfumu0Yk2M97lCbDEUKPiai/RiEuGVGk
+	 76p5Tx+rEe7qw==
+Subject: Subject 1
+From: user1@sender.com
+To: <user2@receiver.com>
+X-Mailer: mail (GNU Mailutils 3.4)
+Message-Id: <20190421085843.3356282142@sender.Home>
+Date: Sun, 21 Apr 2019 08:58:43 +0000 (UTC)
+
+Hello from User 1

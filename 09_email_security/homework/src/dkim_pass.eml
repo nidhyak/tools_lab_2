@@ -1,0 +1,31 @@
+From user1@sender.com  Sun Apr 21 09:09:17 2019
+Return-Path: <user1@sender.com>
+X-Original-To: user2@receiver.com
+Delivered-To: user2@receiver.com
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=10.0.2.7; helo=sender.home; envelope-from=user1@sender.com; receiver=<UNKNOWN> 
+Authentication-Results: receiver.Home;
+	dkim=pass (2048-bit key; unprotected) header.d=sender.com header.i=@sender.com header.b="Gn0ZK45C";
+	dkim-atps=neutral
+Received: from sender.Home (unknown [10.0.2.7])
+	by receiver.Home (Postfix) with ESMTP id C90D8823CD
+	for <user2@receiver.com>; Sun, 21 Apr 2019 09:09:16 +0000 (UTC)
+Received: by sender.Home (Postfix, from userid 1000)
+	id BEC948214C; Sun, 21 Apr 2019 09:09:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=sender.com;
+	s=default; t=1555837756;
+	bh=9KQC2cIIfpJB4fesfFePkZ69SQp/gXE8KvmZEiRAAac=;
+	h=Subject:From:To:Date:From;
+	b=Gn0ZK45C+JAm/fzQ0W3G4UVyaeVakp6erlu+tg2MqBpdD4uINsebVJ0P5Rtv5s45y
+	 AwOyivF2XPSPgyJSuwPcFiQTuSPYDnsEvUoUQpAiXHpeA9Ym/5Dwxm9TcXYYl6jCaY
+	 cbYE3wZihz20gWkMv0Hf7rbPCIRUSMa+ouscbZC1+Fkv0xHNC9vd8iHhyOQLxzm73S
+	 CI5Yumh7p6rD9os8f/XUbxaRQneAZAAeeYeXhqRPlOrBWjm0dFyAfMh2VlLW0agVvo
+	 hdNruOc9cRPVZV+bCEJlpOPr2uzUGQ/JfHmfKeEvbqsJQ2ZeUTnqVKpkVJ408agk4n
+	 EX1TllDMSp+eQ==
+Subject: Test SPF and DKIM
+From: user1@sender.com
+To: <user2@receiver.com>
+X-Mailer: mail (GNU Mailutils 3.4)
+Message-Id: <20190421090916.BEC948214C@sender.Home>
+Date: Sun, 21 Apr 2019 09:09:16 +0000 (UTC)
+
+Hello from User 1 with SPF and DKIM

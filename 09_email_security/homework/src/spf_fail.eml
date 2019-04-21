@@ -1,0 +1,89 @@
+From MAILER-DAEMON  Sun Apr 21 09:04:04 2019
+Return-Path: <>
+X-Original-To: user1@sender.com
+Delivered-To: user1@sender.com
+Received: by sender.Home (Postfix)
+	id 054EA8214C; Sun, 21 Apr 2019 09:04:04 +0000 (UTC)
+Date: Sun, 21 Apr 2019 09:04:04 +0000 (UTC)
+From: MAILER-DAEMON@sender.com (Mail Delivery System)
+Subject: Undelivered Mail Returned to Sender
+To: user1@sender.com
+Auto-Submitted: auto-replied
+MIME-Version: 1.0
+Content-Type: multipart/report; report-type=delivery-status;
+	boundary="C35B282142.1555837444/sender.Home"
+Content-Transfer-Encoding: 8bit
+Message-Id: <20190421090404.054EA8214C@sender.Home>
+
+This is a MIME-encapsulated message.
+
+--C35B282142.1555837444/sender.Home
+Content-Description: Notification
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: 8bit
+
+This is the mail system at host sender.home.
+
+I'm sorry to have to inform you that your message could not
+be delivered to one or more recipients. It's attached below.
+
+For further assistance, please send mail to postmaster.
+
+If you do so, please include this problem report. You can
+delete your own text from the attached returned message.
+
+                   The mail system
+
+<user2@receiver.com>: host mail.receiver.com[10.0.2.8] said: 550 5.7.23
+    <user2@receiver.com>: Recipient address rejected: Message rejected due to:
+    SPF fail - not authorized. Please see
+    http://www.openspf.net/Why?s=mfrom;id=user1@sender.com;ip=10.0.2.9;r=<UNKNOWN>
+    (in reply to RCPT TO command)
+
+--C35B282142.1555837444/sender.Home
+Content-Description: Delivery report
+Content-Type: message/delivery-status
+
+Reporting-MTA: dns; sender.Home
+X-Postfix-Queue-ID: C35B282142
+X-Postfix-Sender: rfc822; user1@sender.com
+Arrival-Date: Sun, 21 Apr 2019 09:04:03 +0000 (UTC)
+
+Final-Recipient: rfc822; user2@receiver.com
+Original-Recipient: rfc822;user2@receiver.com
+Action: failed
+Status: 5.7.23
+Remote-MTA: dns; mail.receiver.com
+Diagnostic-Code: smtp; 550 5.7.23 <user2@receiver.com>: Recipient address
+    rejected: Message rejected due to: SPF fail - not authorized. Please see
+    http://www.openspf.net/Why?s=mfrom;id=user1@sender.com;ip=10.0.2.9;r=<UNKNOWN>
+
+--C35B282142.1555837444/sender.Home
+Content-Description: Undelivered Message
+Content-Type: message/rfc822
+Content-Transfer-Encoding: 8bit
+
+Return-Path: <user1@sender.com>
+Received: by sender.Home (Postfix, from userid 1000)
+	id C35B282142; Sun, 21 Apr 2019 09:04:03 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=sender.com;
+	s=default; t=1555837443;
+	bh=sDcAzLQVwoyKXlt2mnAjMGakjxvq8YrQE2wq7xOhqFI=;
+	h=Subject:From:To:Date:From;
+	b=qMvnS3+xYQZyxPwt5X1X06fot3AKuhwOxHCRuTr52IXTXLfMl3n42CQNnIdfV5AeP
+	 9AlkuAGQdibh4S82FYmR6bU0p+BrrTHrQWd3/LZnrDmH06/Y2+UhrHtf5MLWLD72dV
+	 hDSGIid3AL9jnR2Y+yJf0wXjMYltE6q9uF/TR7+4LXEptNA25nJoEXZ8OfmvK13PUl
+	 ykHhHoXCV+EfcHcQDOaAZOxeaReBGjcqmFT0on52HAJj7VZwfo2iEoBSkkNUVg1HoY
+	 lIi10nvXbfqcie/GZQiqPbLlGAAvHKal9SAoYl7vp1IN9xylqbn/+XVGzdDIKTTAu+
+	 9sCQt3Fp2ECAQ==
+Subject: Spoof with SPF
+From: user1@sender.com
+To: <user2@receiver.com>
+X-Mailer: mail (GNU Mailutils 3.4)
+Message-Id: <20190421090403.C35B282142@sender.Home>
+Date: Sun, 21 Apr 2019 09:04:03 +0000 (UTC)
+
+Spoofed sender with SPF
+
+--C35B282142.1555837444/sender.Home--
+

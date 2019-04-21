@@ -1,0 +1,28 @@
+From user1@sender.com  Sun Apr 21 09:01:07 2019
+Return-Path: <user1@sender.com>
+X-Original-To: user2@receiver.com
+Delivered-To: user2@receiver.com
+Received-SPF: None (mailfrom) identity=mailfrom; client-ip=10.0.2.9; helo=sender.home; envelope-from=user1@sender.com; receiver=<UNKNOWN> 
+Received: from sender.Home (unknown [10.0.2.9])
+	by receiver.Home (Postfix) with ESMTP id D49F6823CB
+	for <user2@receiver.com>; Sun, 21 Apr 2019 09:01:07 +0000 (UTC)
+Received: by sender.Home (Postfix, from userid 1000)
+	id A949282142; Sun, 21 Apr 2019 09:01:07 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=sender.com;
+	s=default; t=1555837267;
+	bh=ORAKWuXr+SAyNMlNNAmEIk1x7/JUub0OMlImoyQiQDU=;
+	h=Subject:From:To:Date:From;
+	b=eUXS6Rjufwg7qm+lnZdJy8+ldAyX9J+wiQUD4Bcii7q9QGVkK7bDT5t3H+fb2TD7T
+	 fh4shg0+eiqWGgy2Cxg6OhP46MoMYhedYyXe3LtqqCRE6GgOfsSXBN4hXAczx+mS4J
+	 TYo6xnCD+4ocfAgYRXYRjPxDJZ5xyT7wCUONol98YNwsrLuM6waR0XGWJy/0QojLmh
+	 QyBfcZv7v+pSPwgjGEPQHv2bDTya5wSy9uch7LuJGqF484tc49pJakhR8eDKfPY9Oi
+	 vm3XMTKAkr7vnLWhumFGLm0OFF06ihhakJjymY/T2nM7P7xFmLA3sqg6PFK7h+qBRu
+	 NUosXYStoXh1Q==
+Subject: Spoof
+From: user1@sender.com
+To: <user2@receiver.com>
+X-Mailer: mail (GNU Mailutils 3.4)
+Message-Id: <20190421090107.A949282142@sender.Home>
+Date: Sun, 21 Apr 2019 09:01:07 +0000 (UTC)
+
+Spoofed sender

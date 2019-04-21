@@ -1,0 +1,28 @@
+From user1@sender.com  Sun Apr 21 09:06:48 2019
+Return-Path: <user1@sender.com>
+X-Original-To: user2@receiver.com
+Delivered-To: user2@receiver.com
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=10.0.2.7; helo=sender.home; envelope-from=user1@sender.com; receiver=<UNKNOWN> 
+Received: from sender.Home (unknown [10.0.2.7])
+	by receiver.Home (Postfix) with ESMTP id B065E823CD
+	for <user2@receiver.com>; Sun, 21 Apr 2019 09:06:48 +0000 (UTC)
+Received: by sender.Home (Postfix, from userid 1000)
+	id 88AAD8214C; Sun, 21 Apr 2019 09:06:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=sender.com;
+	s=default; t=1555837608;
+	bh=fm1Wb/rgulL2os+gDpV+R1AjQmcqYKSxaBrp0rSHDgM=;
+	h=Subject:From:To:Date:From;
+	b=EcTVUou6bLGX9O3SC7dWJVPQXA66hl8/IfWiX5vjylSJxhp9BXoZuWxtvnEQjtm5C
+	 maTa/gSIGShj+6Kchccih107+wwvJr5pleWMLHRooEqO/waFi7r8jwOuls218av/iR
+	 jT32wGpKZsxjud8qMGcJS7lrcmuDpHDaYwbD48Q9xIR6ZJvzK4NfIQxIXK/MRAV2iL
+	 pfekpGc4OrmUzOlu4B/bkzouMro/zUpGkGN9DwcSlGptOkX/monv7AZFOKGhrgIWbZ
+	 vcYA1+aUjk2+ImgIUVwFSufGax24Ca9R+3Pa7fZbxBdsJNvvb8MLSBrW3A4guRxROM
+	 su3hnCH1hlcIw==
+Subject: Test SPF
+From: user1@sender.com
+To: <user2@receiver.com>
+X-Mailer: mail (GNU Mailutils 3.4)
+Message-Id: <20190421090648.88AAD8214C@sender.Home>
+Date: Sun, 21 Apr 2019 09:06:48 +0000 (UTC)
+
+Hello from User 1 with SPF

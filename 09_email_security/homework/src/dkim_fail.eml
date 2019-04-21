@@ -1,0 +1,31 @@
+From user1@sender.com  Sun Apr 21 09:16:41 2019
+Return-Path: <user1@sender.com>
+X-Original-To: user2@receiver.com
+Delivered-To: user2@receiver.com
+Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=10.0.2.7; helo=sender.home; envelope-from=user1@sender.com; receiver=<UNKNOWN> 
+Authentication-Results: receiver.Home;
+	dkim=permerror (0-bit key; unprotected) header.d=sender.com header.i=@sender.com header.b="WJeJLcyn";
+	dkim-atps=neutral
+Received: from sender.Home (unknown [10.0.2.7])
+	by receiver.Home (Postfix) with ESMTP id 5ADA1823CA
+	for <user2@receiver.com>; Sun, 21 Apr 2019 09:16:39 +0000 (UTC)
+Received: by sender.Home (Postfix, from userid 1000)
+	id 5ACE78214C; Sun, 21 Apr 2019 09:16:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=sender.com;
+	s=default; t=1555838199;
+	bh=8SFfPZEPsx+ZH1a2mUps0h1EZx8juWs3CmtSEzwva14=;
+	h=Subject:From:To:Date:From;
+	b=WJeJLcynNAwE6OUssl754Pdon+aYUoYr8ydBJVblirIl9V/xFMzaD2RM/jQ0p77tl
+	 wXY4UEb+3jSm/BEBWYTgjOIqz2jDmt9a2yD0YXyh5F/skQphnfMaw//MYhjn8y+pQo
+	 UH8NaM1D5b0qpFEWa3HxmKjpVclTAg2NB/PcC8StP4GSYgQtrZt1ghC3LS0OCSHxJu
+	 ax0pTfZB7jT12pQE7kOMZSAlEqHXn3CwaA4rlfGM5HbguDQfvBWnxZvtaUpEk9nbpU
+	 3YS1wQvn29Az6c0Fc9/r9kJN20ZFQMP3OjO7ZmojQfldwGYTZ9syfk7fk2Mv1RyBIE
+	 qI4UDyr+whqEw==
+Subject: Test failing DKIM
+From: user1@sender.com
+To: <user2@receiver.com>
+X-Mailer: mail (GNU Mailutils 3.4)
+Message-Id: <20190421091639.5ACE78214C@sender.Home>
+Date: Sun, 21 Apr 2019 09:16:39 +0000 (UTC)
+
+Hello from User 1 with failing DKIM
