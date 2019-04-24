@@ -399,7 +399,7 @@ The content of the email was saved to `spf_fail.eml <https://raw.githubuserconte
 
 Enabling DKIM
 -------------
-The public key in ``sender``'s ``/etc/opendkim/keys/sender.com/default.txt`` was added to the DNS zone records, particularly in ``receiver``, for ``DKIM`` checks to succeed. Since the 2048-bit key we generated consists of over 256 characters, the entry for the TXT record has to be split into chunks of 255 octets or less due to limit specified in RFC 1035 [#]_. Whitespace and splits are minimized to reduce overheads.
+The public key in ``sender``'s ``/etc/opendkim/keys/sender.com/default.txt`` was added to the DNS zone records, particularly in ``receiver``, for ``DKIM`` checks to succeed. Since the 2048-bit key we generated consists of over 256 characters, the entry for the TXT record has to be split into chunks of 255 octets or less due to the limit specified in RFC 1035 [#]_. Whitespace and splits are minimized to reduce overheads.
   
 ``/var/cache/bind/db.sender.com`` at ``receiver``::
 
