@@ -332,7 +332,7 @@ Enabling SPF
    ...
    @       IN      TXT     "v=spf1 ip4:10.0.2.7 -all"
 
-The zone file is formatted in theh following manner:
+The zone file is formatted in the following manner:
 
    :name: ``@`` is a shortcut for the value of ``$ORIGIN`` (i.e. ``example.com.``).
 
