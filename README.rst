@@ -20,6 +20,8 @@ Security Tools Lab 2
 
 #. `Email Security`_
 
+#. `Lottereum`_
+
 .. _`Buffer Overflow & Dirty COW`: https://github.com/ooknosi/tools_lab_2/tree/master/01_buffer_overflow_dirty_cow/homework
 
 .. _`PLC Programming`: https://github.com/ooknosi/tools_lab_2/tree/master/02_plc_programming/homework
@@ -37,3 +39,5 @@ Security Tools Lab 2
 .. _`CPS Control`: https://github.com/ooknosi/tools_lab_2/tree/master/08_cps_control/homework
 
 .. _`Email Security`: https://github.com/ooknosi/tools_lab_2/tree/master/09_email_security/homework
+
+.. _`Email Security`: https://github.com/ooknosi/tools_lab_2/tree/master/10_lottereum/homework
