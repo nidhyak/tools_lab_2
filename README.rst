@@ -40,4 +40,4 @@ Security Tools Lab 2
 
 .. _`Email Security`: https://github.com/ooknosi/tools_lab_2/tree/master/09_email_security/homework
 
-.. _`Email Security`: https://github.com/ooknosi/tools_lab_2/tree/master/10_lottereum/homework
+.. _`Lottereum`: https://github.com/ooknosi/tools_lab_2/tree/master/10_lottereum/homework
