@@ -1,0 +1,120 @@
+import React, { Component } from 'react';
+import web3 from './web3';
+import lottereum from './lottereum';
+
+class App extends Component {
+
+  state = {
+    gameIDs: '',
+    gameCount: '',
+    currentDeposit: '',
+    gameLength: '',
+    isActive: '',
+    ownerCut: '',
+    gameID: '',
+    betValue: '',
+    userInput: '',
+    winner: '',
+    winnings: ''
+  };
+
+  async componentDidMount() {
+    const gameIDs = await lottereum.methods.gameIDs(0).call();
+    const gameCount = await lottereum.methods.showGameCount().call();
+    const currentDeposit = await lottereum.methods.currentDeposit().call();
+    const gameLength = await lottereum.methods.gameLength().call();
+    const isActive = await lottereum.methods.isActive().call();
+    const ownerCut = await lottereum.methods.ownerCut().call();
+    this.setState({
+      gameIDs, gameCount, currentDeposit, gameLength, isActive, ownerCut
+    });
+  };
+
+  onStartGameSubmit = async (event) => {
+    event.preventDefault();
+    const accounts = await web3.eth.getAccounts();
+    await lottereum.methods.startGame().send({
+      from: accounts[0],
+      gas: 4000000
+    });
+    const gameIDs = await lottereum.methods.gameIDs().call();
+    const gameCount = await lottereum.methods.gameCount().call();
+    this.setState({gameIDs, gameCount});
+  }
+
+  onBuyTicketSubmit = async (event) => {
+    event.preventDefault();
+    const accounts = await web3.eth.getAccounts();
+    await lottereum.methods.buyTicket().send({
+      from: accounts[0],
+      value: this.state.betValue,
+      _gameID: this.state.gameID,
+      _userInput: this.state.userInput,
+      gas: 4000000
+    });
+  }
+
+  onResolveGameSubmit = async (event) => {
+    event.preventDefault();
+    const accounts = await web3.eth.getAccounts();
+    await lottereum.methods.resolveGame().send({
+      from: accounts[0],
+      _gameID: this.state.gameID,
+      _userInput: this.state.userInput,
+      gas: 4000000
+    });
+  }
+
+  onGetPayoutSubmit = async (event) => {
+    event.preventDefault();
+    const accounts = await web3.eth.getAccounts();
+    await lottereum.methods.buyTicket().send({
+      from: accounts[0],
+      _gameID: this.state.gameID,
+      gas: 4000000
+    });
+    let logWinner = lottereum.methods.LogWinner();
+    logWinner.watch(this.setState({winner: logWinner._address, winnings: logWinner._winnings}));
+  }
+
+  render() {
+    return (
+      <div>
+        <h2>Lottereum</h2>
+        <p>Latest Game ID: {this.state.gameIDs}</p>
+        <p>Running Games: {this.state.gameCount}</p>
+        <p>Current Honesty Deposit: {this.state.currentDeposit}</p>
+        <p>Game Length: {this.state.gameLength} seconds</p>
+        <p>Lottery Active: {this.state.isActive}</p>
+        <p>Owner&rsquo;s Cut: {this.state.ownerCut}&#37;</p>
+        <hr />
+        <div>
+          <p>Winner: {this.state.winner}</p>
+          <p>Winnings: {this.state.winnings}</p>
+        </div>
+        <div>
+          <div>
+            <label>Game ID</label>
+            <input placeholder="0123456789" value={this.state.gameID} onChange={event=>this.setState({gameID: event.target.value})} />
+          </div>
+          <div>
+            <label>Bet</label>
+            <input placeholder="888" value={this.state.betValue} onChange={event=>this.setState({betValue: event.target.value})} />
+          </div>
+          <div>
+            <label>Secret Bytes</label>
+            <input placeholder="0xdeadbeef" value={this.state.userInput} onChange={event=>this.setState({userInput: event.target.value})} />
+          </div>
+        </div>
+        <div>
+          <button onClick={this.onStartGameSubmit}>Start Game</button>
+          <button onClick={this.onBuyTicketSubmit}>Buy Ticket</button>
+          <button onClick={this.onResolveGameSubmit}>Resolve Game</button>
+          <button onClick={this.onGetPayoutSubmit}>Get Payout</button>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default App;
